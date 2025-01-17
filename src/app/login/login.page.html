@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign in</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background-content">
+  <ion-img
+    alt="logoapp"
+    src="https://tse3.mm.bing.net/th?id=OIG1.KIGnOCMsrUr5nclByG6b&pid=ImgGn"
+    class="logo-img">
+  </ion-img>
+
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
+    </ion-item>
+
+    <div>
+      <ng-container *ngFor="let error of formErrors.email">
+        <ion-label color="danger"
+          *ngIf="(loginForm.get('email')?.hasError(error.type) && loginForm.get('email')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-input label="Password" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
+    </ion-item>
+
+    <div>
+      <ng-container *ngFor="let error of formErrors.password">
+        <ion-label color="danger"
+          *ngIf="(loginForm.get('password')?.hasError(error.type) && loginForm.get('password')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+    </div>
+    <ion-button type="submit"
+    [disabled]="!loginForm.valid"
+
+    >Login</ion-button>
+  </form>
+</ion-content>
