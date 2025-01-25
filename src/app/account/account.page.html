@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-center">
+      DishCovery
+    </ion-title>
+    <ion-buttons>
+      <ion-menu-button class="style-button"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content">
+  <ion-title >{{user_data.name}} {{user_data.last_name}}</ion-title>
+
+  <ion-avatar (click)="takePhoto()" class="profile-avatar">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/4794/4794936.png" class="image-post"/>
+  </ion-avatar>
+
+    <p>usuario: {{user_data.username}}</p>
+
+
+    <p>seguidores: {{user_data.followed_users.length}}</p>
+
+
+    <p>seguidos: {{user_data.following_users.length}}</p>
+
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-center">DishCovery</ion-title>
+    <ion-icon name="log-in" class="close-icon" (click)="finish()"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="home-content">
+  <ion-img
+    alt="logoapp"
+    src="/assets/images/logoapp.jpeg"
+    class="logo-img">
+  </ion-img>
+
+  <form [formGroup]="registerFrom" (ngSubmit)="registerUser(registerFrom.value)" class="register-form">
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="" formControlName="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Verificación" labelPlacement="floating" type="password" placeholder="" formControlName="passwordConfirmation"></ion-input>
+    </ion-item>
+
+    <div>
+      <ng-container *ngFor="let error of formErrors.email">
+        <ion-label color="danger" *ngIf="(registerFrom.get('email')?.hasError(error.type) && registerFrom.get('email')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.name">
+        <ion-label color="danger" *ngIf="(registerFrom.get('name')?.hasError(error.type) && registerFrom.get('name')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.lastname">
+        <ion-label color="danger" *ngIf="(registerFrom.get('lastname')?.hasError(error.type) && registerFrom.get('lastname')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.password">
+        <ion-label color="danger" *ngIf="(registerFrom.get('password')?.hasError(error.type) && registerFrom.get('password')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.passwordConfirmation">
+        <ion-label color="danger" *ngIf="(registerFrom.get('passwordConfirmation')?.hasError(error.type) && registerFrom.get('passwordConfirmation')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+    </div>
+
+    <div class="button-container">
+      <ion-button type="submit" [disabled]="!registerFrom.valid">Sign Up</ion-button>
+
+    </div>
+  </form>
+
+  <p>{{errorMessage}}</p>
+</ion-content>

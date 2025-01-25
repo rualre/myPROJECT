@@ -7,13 +7,27 @@
   transition: transform 0.09s ease-in-out;
 
 }
-
 ion-header {
   --background: #f5e1da; /* Fondo pastel para el header */
   ion-toolbar {
     --background: #f5e1da; /* Fondo pastel para el toolbar */
     ion-title {
       color: #5b5b5b; /* Color del texto */
+    }
+    ion-icon.close-icon {
+      color: #000; /* Color negro para el icono */
+      margin-left: auto; /* Alinea el icono a la derecha */
+      font-size: 24px; /* Ajusta el tamaño del icono */
+      cursor: pointer; /* Añade el cursor de puntero */
+      transition: transform 0.1s ease-in-out; /* Efecto de transición */
+
+      &:hover {
+        transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+      }
+
+      &:active {
+        transform: scale(0.9); /* Reduce el tamaño al hacer clic */
+      }
     }
   }
 }
@@ -31,7 +45,7 @@ ion-header {
   object-fit: cover; /* Asegura que la imagen se ajuste dentro del borde circular */
 }
 
-.login-form {
+.register-form {
   padding: 20px;
 }
 
@@ -52,13 +66,6 @@ ion-button {
   transition: transform 0.1s ease-in-out; /* Efecto de transición */
 
   &:active {
-    transform: scale(1.95); /* Efecto al hacer click */
-  }
-}
-
-.register-button {
-  &:active {
-    background-color: #e6b8b8; /* Cambia el color de fondo al hacer clic */
-    transform: scale(1.25); /* Efecto al hacer clic */
+    transform: scale(0.95); /* Efecto al hacer click */
   }
 }

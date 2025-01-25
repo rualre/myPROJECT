@@ -1,35 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import { AutenticationService } from "../services/autentication.service";
-import { NavController } from "@ionic/angular";
 import { Storage } from "@ionic/storage-angular";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: false,
+  standalone: false
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   errorMessage: any;
   formErrors = {
     email: [
-      { type: 'required', message: 'Email is required' },
-      { type: 'email', message: 'Enter a valid email' }
+      { type: 'required', message: 'Email es requerido' },
+      { type: 'email', message: 'Introduce un email válido' }
     ],
     password: [
-      { type: 'required', message: 'Password is required' },
-      { type: 'minlength', message: 'Password must be at least 6 characters long' }
+      { type: 'required', message: 'Contraseña es requerida' },
+      { type: 'minlength', message: 'La contraseña debe tener al menos 6 caracteres' }
     ]
-  }
+  };
 
   constructor(
     private formBuilder: FormBuilder,
     private autenticationService: AutenticationService,
     private navCtrl: NavController,
     private storage: Storage
-
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
@@ -37,26 +36,36 @@ export class LoginPage implements OnInit {
         Validators.email
       ])),
       password: new FormControl('', Validators.compose([
-        Validators.minLength(6),
-        Validators.required
+        Validators.required,
+        Validators.minLength(6)
       ]))
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   loginUser(credentials: any) {
-    this.autenticationService.login(credentials).then(res => {
+    this.autenticationService.login(credentials).then((res: any) => {
       console.log(res);
       this.errorMessage = '';
+      this.storage.set('user', res.user)
       this.storage.set('isUserLoggedIn', true);
-      this.navCtrl.navigateForward("/home");
-
+      this.navCtrl.navigateForward("/menu/home");
     }).catch(err => {
       console.log(err);
       this.errorMessage = err;
     });
   }
+
+  goToRegister() {
+    this.navCtrl.navigateForward('/register');
   }
+
+  goToHome() {
+    this.navCtrl.navigateForward('/menu/home');
+  }
+}
+
 
 

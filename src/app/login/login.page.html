@@ -3,17 +3,15 @@
     <ion-title class="text-center">DishCovery</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-toolbar>
-  <ion-title class="text-center">Sing in</ion-title>
-</ion-toolbar>
-<ion-content >
+
+<ion-content class="home-content">
   <ion-img
-    alt="logoapp"
-    src="https://tse3.mm.bing.net/th?id=OIG1.KIGnOCMsrUr5nclByG6b&pid=ImgGn"
+    alt="logoapp1"
+    src="assets/images/logoapp.jpeg"
     class="logo-img">
   </ion-img>
 
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login-form">
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
     </ion-item>
@@ -39,12 +37,12 @@
         </ion-label>
       </ng-container>
     </div>
-    <ion-button type="submit"
-    [disabled]="!loginForm.valid"
 
-    >Login</ion-button>
+    <div class="button-container">
+      <ion-button type="submit" [disabled]="!loginForm.valid">Sign In</ion-button>
+      <ion-button (click)="goToRegister()" class="register-button">Sign Up</ion-button>
+    </div>
   </form>
 
-<p>{{errorMessage}}</p>
-
+  <p>{{errorMessage}}</p>
 </ion-content>

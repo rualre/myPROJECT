@@ -1,0 +1,68 @@
+ion-header {
+  --background: #f5e1da; /* Fondo pastel para el header */
+  ion-toolbar {
+    --background: #f5e1da; /* Fondo pastel para el toolbar */
+  }
+}
+
+.home-content {
+  --background: #f9f9f9; /* Fondo pastel para el contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.text-center {
+  color: #5b5b5b; /* Color del texto */
+}
+
+.profile-title {
+  font-size: 1.5em;
+  color: #5b5b5b; /* Color del texto */
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profile-avatar {
+  margin: 10px 0; /* Espacio entre el título y la imagen */
+  display: flex;
+  justify-content: center; /* Centra el avatar horizontalmente */
+}
+.image-post {
+  width: 200px;
+  height: 100px; /* Ajusta la altura de la imagen */
+  border-radius: 0%; /* Hace que la imagen sea circular */
+
+}
+
+.pastel-card {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #e8f0fe; /* Color pastel para las tarjetas */
+  color: #5b5b5b; /* Color del texto */
+  box-shadow: 0 4px 8px rgba(214, 214, 214, 0.36);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; /* Efecto de transición */
+
+  &:hover {
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.98); /* Efecto al hacer clic */
+  }
+}
+
+p {
+  color: #5b5b5b; /* Color del texto */
+  margin: 5px 0;
+  text-align: center;
+}
+
+.style-button {
+  color: #5b5b5b; /* Color del botón */
+}

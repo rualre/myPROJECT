@@ -1,0 +1,24 @@
+ion-header {
+  --background: #f5e1da; /* Color pastel para el fondo del header */
+  ion-toolbar {
+    --background: #f5e1da; /* Color pastel para el fondo del toolbar */
+    ion-title {
+      color: #5b5b5b; /* Color de texto */
+    }
+    ion-button {
+      --background: #ffccd5; /* Color pastel para el botón */
+      color: #5b5b5b; /* Color de icono */
+    }
+  }
+}
+
+ion-content {
+  --background: #f9f9f9; /* Color pastel para el fondo del contenido */
+  ion-item {
+    --background: #e8f0fe; /* Color pastel para los items */
+    --color: #5b5b5b; /* Color del texto */
+    ion-icon {
+      color: #5b5b5b; /* Color del icono */
+    }
+  }
+}

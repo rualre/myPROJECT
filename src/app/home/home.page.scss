@@ -25,3 +25,56 @@
 #container a {
   text-decoration: none;
 }
+.home-content {
+  background-color: #f9f9f9 !important; /* Asegura el color de fondo pastel */
+}
+
+.toolbar-container {
+  --background: #f5e1da; /* Fondo pastel para el toolbar */
+  ion-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5b5b5b; /* Color del texto */
+    img.app-logo {
+      height: 30px; /* Altura de la imagen */
+      width: auto; /* Ajuste automático del ancho */
+      margin-left: 10px; /* Espacio entre el texto y la imagen */
+    }
+  }
+}
+  ion-buttons ion-menu-button {
+    --background: #ffccd5; /* Fondo pastel para el botón */
+    color: #5b5b5b; /* Color del icono */
+
+  }
+  ion-buttons ion-menu-button {
+    --background: #ffccd5; /* Fondo pastel para el botón */
+    color: #5b5b5b; /* Color del icono */
+  }
+
+
+ion-content {
+  --background: #f9f9f9; /* Fondo pastel para el contenido */
+}
+
+.pastel-card {
+  --background: #e8f0fe; /* Fondo pastel para las tarjetas */
+  ion-card-header {
+    --background: #f5e1da; /* Fondo pastel para el header de la tarjeta */
+    ion-card-subtitle {
+      color: #5b5b5b; /* Color del texto del subtítulo */
+      ion-avatar img {
+        border-radius: 50%;
+      }
+    }
+  }
+  ion-card-content {
+    color: #5b5b5b; /* Color del texto del contenido de la tarjeta */
+  }
+}
+
+.user-avatar {
+  --border-radius: 50%;
+}
+
