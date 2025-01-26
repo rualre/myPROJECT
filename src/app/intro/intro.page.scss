@@ -1,31 +1,79 @@
-swiper-container {
-  width: 100%;
-  height: 100%;
-}
-swiper-slide {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: rgba(255, 230, 0, 0.58);
-}
-.title1 {
-color: rgb(0, 0, 0);
+/* Estilo para pantalla completa */
+.full-screen {
+  height: 100vh; /* Altura de la pantalla completa */
 }
 
+/* Fondo pastel para los slides */
 .bg-color-slide {
-background-color: rgba(255, 230, 0, 0.58);
-}
-.type1{
-  color: rgb(0, 0, 0);
+  background-color: #e8f0fe; /* Pastel azul claro */
+  color: #5b5b5b; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-
+  align-items: center;
+  padding: 20px;
 }
+
+/* Estilo de los iconos */
+.icon-style {
+  font-size: 24px;
+  color: #f5a623; /* Color pastel de los iconos */
+  margin-bottom: 10px;
+}
+
+/* Estilo de los títulos */
+.title1 {
+  font-size: 1.5em;
+  color: #4a90e2; /* Color pastel de los títulos */
+  margin: 10px 0;
+}
+
+/* Estilo de las imágenes */
+.logo-image, .explore-image, .guard-image, .project-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Estilo de los párrafos */
+.type1 {
+  font-size: 1em;
+  color: #5b5b5b; /* Color del texto */
+  margin: 10px 0;
+}
+
+/* Transiciones y efectos */
+.swiper-slide {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .close-icon {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 35px;
-  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e57373; /* Color pastel para el ícono de cerrar */
 }
 
+/* Estilo personalizado para la paginación */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #f5a623; /* Color pastel para los puntos */
+  opacity: 1;
+  margin: 0 8px; /* Espaciado entre los puntos */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #4a90e2; /* Color pastel para el punto activo */
+  transform: scale(1.2); /* Aumenta el tamaño del punto activo */
+}

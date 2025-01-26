@@ -26,7 +26,7 @@
   text-decoration: none;
 }
 .home-content {
-  background-color: #f9f9f9 !important; /* Asegura el color de fondo pastel */
+  background-color: #5b5b5b !important; /* Asegura el color de fondo pastel */
 }
 
 .toolbar-container {
@@ -71,6 +71,12 @@ ion-content {
   }
   ion-card-content {
     color: #5b5b5b; /* Color del texto del contenido de la tarjeta */
+  }
+}
+ion-fab{
+  ion-fab-button{
+    --background: #3f3b3bac;
+    --color: #ffccd5;
   }
 }
 

@@ -13,8 +13,7 @@
   <ion-title >{{user_data.name}} {{user_data.last_name}}</ion-title>
 
   <ion-avatar (click)="takePhoto()" class="profile-avatar">
-
-    <img src="https://cdn-icons-png.flaticon.com/512/4794/4794936.png" class="image-post"/>
+  <img [src]="user_data.image" class="image-post"/>
   </ion-avatar>
 
     <p>usuario: {{user_data.username}}</p>

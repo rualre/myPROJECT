@@ -14,8 +14,18 @@
        </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+<ion-item (click)="Home_page()" >
+  <ion-icon name="home"></ion-icon>Home
+</ion-item>
+
+
+<ion-item (click)="account()" >
+  <ion-icon name="person-circle-sharp"></ion-icon>Cuenta
+</ion-item>
+
+
+
   <ion-item (click)="log_out()">
     <ion-icon name="log-out-outline"></ion-icon>Salir
   </ion-item>

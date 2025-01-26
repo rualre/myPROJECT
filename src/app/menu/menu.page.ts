@@ -29,4 +29,11 @@ export class MenuPage implements OnInit {
     this.navCtrl.navigateRoot("/login")
   }
 
+  account(){
+    this.navCtrl.navigateRoot("/menu/account")
+  }
+  Home_page(){
+    this.navCtrl.navigateRoot("/menu/home")
+  }
+
 }
