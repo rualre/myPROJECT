@@ -4,8 +4,12 @@
   margin: 0 auto;
   width: 125px; /* Ajusta el tamaño de la imagen según sea necesario */
   height: 150px; /* Hacer el ancho y alto iguales para formar el círculo */
-  transition: transform 0.09s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 100%;
+}
 
+img{
+  border-radius: 100%;
 }
 
 ion-header {

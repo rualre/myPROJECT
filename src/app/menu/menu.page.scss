@@ -1,3 +1,36 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.home-content {
+  background-image: url('/assets/images/tu-imagen-de-fondo.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra toda el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-color: #5b5b5b !important; /* Color de fondo de reserva */
+}
+
 ion-header {
   --background: #f5e1da; /* Color pastel para el fondo del header */
   ion-toolbar {
@@ -6,19 +39,90 @@ ion-header {
       color: #5b5b5b; /* Color de texto */
     }
     ion-button {
-      --background: #ffccd5; /* Color pastel para el botón */
+      --background: linear-gradient(135deg, #ffccd5, #f5e1da); /* Degradado para el botón */
       color: #5b5b5b; /* Color de icono */
+      transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
+    }
+    ion-button:hover {
+      background-color: #f5e1da; /* Color al pasar el mouse */
+      transform: scale(1.05); /* Efecto de escala al pasar el mouse */
     }
   }
 }
 
 ion-content {
-  --background: #f9f9f9; /* Color pastel para el fondo del contenido */
+  --background: #5b5b5b; /* Color pastel para el fondo del contenido */
   ion-item {
     --background: #e8f0fe; /* Color pastel para los items */
     --color: #5b5b5b; /* Color del texto */
     ion-icon {
       color: #5b5b5b; /* Color del icono */
     }
+    transition: background-color 0.3s, transform 0.3s; /* Efecto de transición */
   }
+  ion-item:hover {
+    background-color: #cfe0fc; /* Color al pasar el mouse */
+    transform: translateX(10px); /* Efecto de desplazamiento al pasar el mouse */
+  }
+}
+
+.pastel-card {
+  --background: #e8f0fe; /* Fondo pastel para las tarjetas */
+  ion-card-header {
+    --background: #f5e1da; /* Fondo pastel para el header de la tarjeta */
+    ion-card-subtitle {
+      color: #5b5b5b; /* Color del texto del subtítulo */
+      ion-avatar img {
+        border-radius: 50%;
+      }
+    }
+  }
+  ion-card-content {
+    color: #5b5b5b; /* Color del texto del contenido de la tarjeta */
+  }
+}
+
+ion-fab ion-fab-button {
+  --background: #3f3b3bac;
+  --color: #ffccd5;
+}
+
+.user-avatar {
+  --border-radius: 50%;
+}
+
+.custom-close-button {
+  --background: #c0c0c0; /* Color gris */
+  color: #5b5b5b; /* Color del icono */
+
+  transition: background-color 2.0s, transform 1.0s ease-in-out; /* Efecto de transición */
+}
+
+.custom-close-button:active {
+  background-color: #a0a0a0; /* Color gris oscuro al hacer clic */
+  transform: scale(0.95); /* Efecto de escala al hacer clic */
+}
+
+
+/* Estilos para el menú */
+.menu-content {
+  background-image: url('/assets/images/logoapp.jpeg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra toda el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-color: #5b5b5b; /* Color de fondo de reserva */
+  color: #ffffff; /* Color del texto para mejor legibilidad */
+}
+
+ion-item {
+  background: rgba(130, 130, 130, 0.8); /* Fondo semitransparente para los ítems */
+  margin: 10px;
+  border-radius: 50px; /* Borde redondeado para los ítems */
+  color: #5b5b5b; /* Color del texto de los ítems */
+  transition: background-color 0.9s, transform 0.3s; /* Efecto de transición */
+}
+
+ion-item:hover {
+  background-color: #cfe0fc; /* Color al pasar el mouse */
+  transform: translateX(45px); /* Efecto de desplazamiento al pasar el mouse */
 }

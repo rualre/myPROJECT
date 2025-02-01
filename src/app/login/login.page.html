@@ -12,10 +12,11 @@
   </ion-img>
 
   <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login-form">
+  <ion-card>
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
     </ion-item>
-
+  </ion-card>
     <div>
       <ng-container *ngFor="let error of formErrors.email">
         <ion-label color="danger"
@@ -25,9 +26,11 @@
       </ng-container>
     </div>
 
+    <ion-card>
     <ion-item>
       <ion-input label="Password" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
     </ion-item>
+  </ion-card>
 
     <div>
       <ng-container *ngFor="let error of formErrors.password">
@@ -40,9 +43,14 @@
 
     <div class="button-container">
       <ion-button type="submit" [disabled]="!loginForm.valid">Sign In</ion-button>
-      <ion-button (click)="goToRegister()" class="register-button">Sign Up</ion-button>
+      <ion-button (click)="goToIntro()" class="register-button">Sign Up</ion-button>
     </div>
   </form>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" >
+    <ion-avatar class="app-logo" >
+      <img src="/assets/images/logoapp.jpeg"  alt="Logo de DishCovery"/>
+    </ion-avatar>
+  </ion-fab>
 
   <p>{{errorMessage}}</p>
 </ion-content>

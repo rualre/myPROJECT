@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { AutenticationService } from "../services/autentication.service";
 import { Storage } from "@ionic/storage-angular";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -58,8 +59,8 @@ export class LoginPage implements OnInit {
     });
   }
 
-  goToRegister() {
-    this.navCtrl.navigateForward('/register');
+  goToIntro() {
+    this.navCtrl.navigateForward('/intro');
   }
 
   goToHome() {

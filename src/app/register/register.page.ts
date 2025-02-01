@@ -23,6 +23,9 @@ export class RegisterPage implements OnInit {
     lastname: [
       { type: 'required', message: 'Apellido es requerido' }
     ],
+    username: [
+      { type: 'required', message: 'Nombre de usuario es requerido' }
+    ],
     password: [
       { type: 'required', message: 'Contraseña es requerida' },
       { type: 'minlength', message: 'La contraseña debe tener al menos 6 caracteres' }
@@ -45,6 +48,7 @@ export class RegisterPage implements OnInit {
       ])),
       name: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6)
@@ -58,13 +62,12 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
-
   mustMatch(password: string, passwordConfirmation: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[password];
       const matchingControl = formGroup.controls[passwordConfirmation];
 
-      if (matchingControl.errors && !matchingControl.errors) {
+      if (matchingControl.errors && !matchingControl.errors["mustMatch"]) {
         return;
       }
 
@@ -75,20 +78,20 @@ export class RegisterPage implements OnInit {
       }
     };
   }
-  finish(){
-    console.log("finish");
-    this.navCtrl.navigateForward('/login');
-    }
+
   registerUser(registerData: any) {
     this.autenticationService.register(registerData).then(res => {
-        console.log(res);
-        this.errorMessage = '';
-        this.navCtrl.navigateForward('/login');
+      console.log(res);
+      this.errorMessage = '';
+      this.navCtrl.navigateForward('/login');
     }).catch(err => {
-        console.log(err);
-        this.errorMessage = err;
+      console.log(err);
+      this.errorMessage = err;
     });
-}
+  }
 
-
+  finish() {
+    console.log("finish");
+    this.navCtrl.navigateForward('/login');
+  }
 }

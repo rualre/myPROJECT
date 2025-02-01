@@ -24,10 +24,11 @@
 }
 
 .home-content {
-  background-color: #add8e6 !important; /* Fondo azul claro para home */
+  background-color: #5b5b5b !important; /* Fondo oscuro para home */
 }
 
-.toolbar-container {
+.toolbar-container,
+ion-toolbar {
   --background: #f5e1da; /* Fondo pastel para el toolbar */
 }
 
@@ -50,11 +51,11 @@ ion-buttons ion-menu-button {
 }
 
 ion-content {
-  --background: #e5f3f9; /* Fondo pastel para el contenido */
+  --background: #f9f9f9; /* Fondo pastel para el contenido */
 }
 
 .pastel-card {
-  --background: #e8f0fe; /* Fondo pastel para las tarjetas */
+  --background: #5b5b5b; /* Fondo pastel para las tarjetas */
 }
 
 ion-card-header {
@@ -82,34 +83,48 @@ ion-fab ion-fab-button {
   --border-radius: 50%;
 }
 
-.close-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #3f3b3bac; /* Color pastel para el ícono de cerrar */
+.searchbar {
+  --background: #d3d3d3; /* Color gris para la barra de búsqueda */
+  --placeholder-color: #5b5b5b; /* Color del texto de marcador de posición */
+  --color: #333333; /* Color del texto */
 }
 
-/* Estilos para el formulario de montar post */
+ion-item {
+  --background: #f5e1da; /* Fondo pastel para los ítems */
+  --color: #5b5b5b; /* Color del texto */
+}
+
 .pastel-content {
-  background-color: #add8e6 !important; /* Fondo azul claro */
+  background-color: #5b5b5b !important; /* Fondo pastel */
 }
 
-.pastel-toolbar {
-  --background: #f5e1da; /* Fondo pastel para el toolbar */
+.pastel-footer {
+  --background: transparent; /* Fondo transparente para ion-footer */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+ion-button {
+  --background: #f5e1da; /* Fondo pastel para el botón */
+  --color: #000;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: background-color 0.9s;
 }
 
 .upload-container {
   text-align: center;
-  margin: 40px ;
+  margin: 20px 0;
 }
 
 .upload-container img {
   border: 10px solid #5b5b5b; /* Borde pastel para la imagen */
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 10px;
-  width: 80%;
 }
 
 .upload-container p {
@@ -123,37 +138,9 @@ ion-fab ion-fab-button {
 }
 
 ion-textarea {
-  --background: #f5e1da; /* Fondo blanco para textarea */
-  color: #1b1b1b;
-  border-radius: 20px;
+  --background: #ffffff; /* Fondo blanco para textarea */
+  border: 2px solid #5b5b5b; /* Borde pastel */
+  border-radius: 5px;
   padding: 10px;
   width: 100%;
-}
-.style-card{
-  background-color: #f5e1da;
-}
-.pastel-footer {
-  --background: transparent; /* Fondo transparente para ion-footer */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border-radius: 25px; /* Borde redondeado moderno */
-}
-
-ion-button {
-  --background: #f5e1da; /* Fondo azul moderno para el botón */
-  --color: #5b5b5b; /* Color del texto blanco */
-  font-size: 1em;
-  transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
-
-}
-
-ion-button:hover {
-  background-color: #0056b3; /* Fondo azul oscuro al pasar el mouse */
-}
-
-ion-button:active {
-  transform: scale(0.95); /* Efecto de escala al hacer clic */
 }

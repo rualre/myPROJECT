@@ -1,9 +1,8 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="text-center">DishCovery</ion-title>
-    <ion-icon name="log-in" class="close-icon" (click)="finish()"></ion-icon>
+    <ion-icon name="arrow-back" class="close-icon" (click)="finish()"></ion-icon>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content class="home-content">
@@ -14,22 +13,36 @@
   </ion-img>
 
   <form [formGroup]="registerFrom" (ngSubmit)="registerUser(registerFrom.value)" class="register-form">
-    <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input label="Nombre" labelPlacement="floating" placeholder="" formControlName="name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input label="Apellido" labelPlacement="floating" placeholder="" formControlName="lastname"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input label="Verificación" labelPlacement="floating" type="password" placeholder="" formControlName="passwordConfirmation"></ion-input>
-    </ion-item>
-
+    <ion-card>
+      <ion-item>
+        <ion-input label="Email" labelPlacement="floating" placeholder="" formControlName="email"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Nombre" labelPlacement="floating" placeholder="" formControlName="name"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Apellido" labelPlacement="floating" placeholder="" formControlName="lastname"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Username" labelPlacement="floating" placeholder="" formControlName="username"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-input label="Verificación" labelPlacement="floating" type="password" placeholder="" formControlName="passwordConfirmation"></ion-input>
+      </ion-item>
+    </ion-card>
     <div>
       <ng-container *ngFor="let error of formErrors.email">
         <ion-label color="danger" *ngIf="(registerFrom.get('email')?.hasError(error.type) && registerFrom.get('email')?.dirty)">
@@ -43,6 +56,11 @@
       </ng-container>
       <ng-container *ngFor="let error of formErrors.lastname">
         <ion-label color="danger" *ngIf="(registerFrom.get('lastname')?.hasError(error.type) && registerFrom.get('lastname')?.dirty)">
+          {{ error.message }}
+        </ion-label>
+      </ng-container>
+      <ng-container *ngFor="let error of formErrors.username">
+        <ion-label color="danger" *ngIf="(registerFrom.get('username')?.hasError(error.type) && registerFrom.get('username')?.dirty)">
           {{ error.message }}
         </ion-label>
       </ng-container>
@@ -60,9 +78,12 @@
 
     <div class="button-container">
       <ion-button type="submit" [disabled]="!registerFrom.valid">Sign Up</ion-button>
-
     </div>
   </form>
-
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-avatar class="app-logo">
+      <img src="/assets/images/logoapp.jpeg" alt="Logo de DishCovery"/>
+    </ion-avatar>
+  </ion-fab>
   <p>{{errorMessage}}</p>
 </ion-content>
